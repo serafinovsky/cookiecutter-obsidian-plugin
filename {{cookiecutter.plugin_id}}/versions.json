@@ -1,0 +1,3 @@
+{
+  "0.0.1": "{{cookiecutter.min_obsidian_version}}"
+}

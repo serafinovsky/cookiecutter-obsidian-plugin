@@ -1,0 +1,12 @@
+{
+  "plugin_id": "obsidian-plugin",
+  "plugin_name": "Obsidian Plugin",
+  "author_name": "Your Name",
+  "description": "A minimal Obsidian plugin",
+  "min_obsidian_version": "1.5.0",
+  "license": ["MIT", "Apache-2.0", "BSD-3-Clause", "GPL-3.0", "ISC", "none"],
+  "repo_url": "https://github.com/yourname/obsidian-plugin",
+  "node_version": "20",
+  "enable_vitest": ["no", "yes"],
+  "enable_i18n": ["no", "yes"]
+}

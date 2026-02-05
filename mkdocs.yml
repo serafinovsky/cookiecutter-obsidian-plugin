@@ -1,0 +1,34 @@
+site_name: Cookiecutter Obsidian Plugin
+site_description: Obsidian plugin template with ready-to-use tooling
+site_author: serafinovsky
+site_url: https://serafinovsky.github.io/cookiecutter-obsidian-plugin
+
+repo_name: serafinovsky/cookiecutter-obsidian-plugin
+repo_url: https://github.com/serafinovsky/cookiecutter-obsidian-plugin
+edit_uri: edit/main/docs/
+
+theme:
+  name: readthedocs
+  highlightjs: true
+  hljs_languages:
+    - python
+    - bash
+    - yaml
+
+plugins:
+  - search
+
+markdown_extensions:
+  - codehilite
+  - toc:
+      permalink: true
+  - fenced_code
+
+nav:
+  - Home: index.md
+  - Features:
+      - features/ci-cd.md
+      - features/release-workflow.md
+      - features/makefile.md
+  - After Install: tutorial.md
+  - Prompt Arguments: prompt-arguments.md

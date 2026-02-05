@@ -1,0 +1,30 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "{{cookiecutter.node_version}}"
+          cache: "npm"
+      - run: npm install
+      {% if cookiecutter.enable_vitest == "yes" -%}
+      - run: npm run test
+      {%- endif %}
+      - run: npm run build
+      - name: Publish release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            main.js
+            manifest.json
+            styles.css

@@ -1,0 +1,45 @@
+{
+  "name": "{{cookiecutter.plugin_id}}",
+  "version": "0.0.1",
+  "description": "{{cookiecutter.description}}",
+  "license": "{% if cookiecutter.license == "none" %}UNLICENSED{% else %}{{cookiecutter.license}}{% endif %}",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node esbuild.config.mjs",
+    "build": "node esbuild.config.mjs production",
+    "version": "node version-bump.mjs && prettier --write manifest.json versions.json && git add manifest.json versions.json",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "check": "npm run lint && npm run format:check"
+    {% if cookiecutter.enable_vitest == "yes" -%}
+    ,
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage"
+    {%- endif %}
+  },
+  {% if cookiecutter.enable_i18n == "yes" -%}
+  "dependencies": {
+    "i18next": "25.8.3"
+  },
+  {%- endif %}
+  "devDependencies": {
+    "@eslint/js": "9.39.2",
+    "@types/node": "25.2.0",
+    "esbuild": "0.27.2",
+    "eslint": "9.39.2",
+    "eslint-plugin-obsidianmd": "0.1.9",
+    "globals": "15.14.0",
+    "obsidian": "1.11.4",
+    "prettier": "3.8.1",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.54.0"
+    {% if cookiecutter.enable_vitest == "yes" -%}
+    ,
+    "@vitest/coverage-v8": "4.0.18",
+    "vitest": "4.0.18"
+    {%- endif %}
+  }
+}

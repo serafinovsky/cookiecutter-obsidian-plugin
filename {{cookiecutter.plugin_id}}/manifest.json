@@ -1,0 +1,8 @@
+{
+  "id": "{{cookiecutter.plugin_id}}",
+  "name": "{{cookiecutter.plugin_name}}",
+  "version": "0.0.1",
+  "minAppVersion": "{{cookiecutter.min_obsidian_version}}",
+  "description": "{{cookiecutter.description}}",
+  "author": "{{cookiecutter.author_name}}"
+}
